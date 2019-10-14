@@ -1,6 +1,6 @@
 {
   "name": "favorite-team-tracker",
-  "homepage": "https://<USERNAME>.github.io/<REPO NAME>",
+  "homepage": "https://mrodrz7.github.io/favorite-team-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
