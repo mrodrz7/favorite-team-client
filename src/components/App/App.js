@@ -8,7 +8,9 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
-
+import Teams from '../Teams/Teams'
+import Team from '../Teams/Team'
+import CreateTeam from '../Teams/CreateTeam'
 class App extends Component {
   constructor () {
     super()
@@ -54,6 +56,38 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/teams'
+            render={() => (
+              <Teams
+                user={user}
+                alert={this.alert}
+              />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/teams/:id'
+            render={() => (
+              <Team
+                user={user}
+                alert={this.alert}
+              />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/create-team'
+            render={() => (
+              <CreateTeam
+                user={user}
+                alert={this.alert}
+              />
+            )}
+          />
         </main>
       </Fragment>
     )
